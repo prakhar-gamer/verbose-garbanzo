@@ -25,8 +25,6 @@ def complexAlbumList(album, url):
 
     soup = BeautifulSoup(response.text, 'html.parser')
 
-    #TEST
-    testHtml(soup, "output2.txt")
 
     newAlbums = []
     for a in soup.select('a[class*="DiscographyItem__Container"]'):
@@ -89,8 +87,6 @@ def main():
 
     soup = BeautifulSoup(response.text, 'html.parser')
 
-    #TEST
-    testHtml(soup, "output.txt")
 
     list = simpleAlbumList(soup)
 
@@ -104,16 +100,6 @@ def main():
     else:
         print(list["moreAlbums"])
     return
-
-#TEST
-#outputs the website html to the txt for easier searching
-def testHtml(s: BeautifulSoup, output_loco):
-    f = open(output_loco, "w", encoding="utf-8")
-    try:
-        f.write(s.prettify())
-    finally:
-        f.close()
-
 
 if __name__ == "__main__":
     main()
