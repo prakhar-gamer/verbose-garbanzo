@@ -98,9 +98,15 @@ def main():
     if albums:
         print(albums)
     else:
-        print(list["moreAlbums"])
+        print("There are 0 albums linked to the genius ")
     return
 
 if __name__ == "__main__":
-    main()
+    try: 
+        main()
+    except Exception as e:
+       print(f"error: {e}")
+    finally:
+        input("Press enter to close the program!")
+       
 
